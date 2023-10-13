@@ -1,0 +1,27 @@
+
+#include "_avr_includes.h"
+#include "_srxe_includes.h"
+
+const char *_test_strings[] = {
+	"Line1",
+	"Line2",
+	"Line3",
+	"Line4",
+	"Line5",
+	"Line6",
+	"Line7"
+};
+
+int main() {
+	powerInit();
+//	rfInit(16);
+	kbdInit();
+
+	// LCD
+	lcdInit();
+	lcdClearScreen();
+
+	uiLinesBox(_test_strings, 0, 0, LCD_WIDTH, LCD_HEIGHT, true);
+
+	return 0;
+}
